@@ -43,8 +43,13 @@ The agent will then follow the 6-stage process described below.
   - `install.ps1`: A PowerShell script for Windows systems doing the same.
 
 ### Phase 3: README Documentation
-- Create high-quality documentation focusing on users of the skill (Usage, Features, Installation).
+- Create high-quality documentation focusing on developers and users of the skill (Usage, Features, Installation).
 - The default README must be in English.
+- **Developer Requirements**:
+  - Incorporate clean, functional emojis (e.g., 🛠️, ⚙️, 📄, 🚀) to improve readability without causing visual noise.
+  - Include a **Tech Stack** section using Shields.io badges (e.g., Bash, PowerShell, Markdown badges) instead of verbose text list.
+  - Include a **Technical Details** section explaining the internal workflow, directory structure mapping, and architecture of the skill.
+  - Include a **License** section with a Shields.io license badge (e.g., MIT badge) linking to the LICENSE file or key license details.
 
 ### Phase 4: Localization (5 Languages)
 - Produce translated markdown documentation for:
@@ -52,6 +57,7 @@ The agent will then follow the 6-stage process described below.
   - Japanese (`README.ja.md`)
   - Spanish (`README.es.md`)
   - Chinese (`README.zh.md`)
+- Ensure all translations maintain the same structure, tech stack descriptions, license details, and emoji usage.
 - Every README file (including the main `README.md`) must feature language-switching link headers at the top:
   ```markdown
   [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [Español](README.es.md) | [简体中文](README.zh.md)
