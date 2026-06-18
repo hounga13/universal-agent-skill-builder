@@ -19,20 +19,26 @@ done
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 SKILL_NAME="universal-agent-skill-builder"
 
-# Define destination directories
-declare -A GLOBAL_PATHS
-GLOBAL_PATHS[antigravity]="$HOME/.gemini/config/skills/$SKILL_NAME"
-GLOBAL_PATHS[claude]="$HOME/.claude/skills/$SKILL_NAME"
-GLOBAL_PATHS[codex]="$HOME/.agents/skills/$SKILL_NAME"
-GLOBAL_PATHS[gemini]="$HOME/.gemini/skills/$SKILL_NAME"
-GLOBAL_PATHS[opencode]="$HOME/.config/opencode/skills/$SKILL_NAME"
+# Functions to return target paths for better compatibility
+get_global_path() {
+    case "$1" in
+        antigravity) echo "$HOME/.gemini/config/skills/$SKILL_NAME" ;;
+        claude) echo "$HOME/.claude/skills/$SKILL_NAME" ;;
+        codex) echo "$HOME/.agents/skills/$SKILL_NAME" ;;
+        gemini) echo "$HOME/.gemini/skills/$SKILL_NAME" ;;
+        opencode) echo "$HOME/.config/opencode/skills/$SKILL_NAME" ;;
+    esac
+}
 
-declare -A LOCAL_PATHS
-LOCAL_PATHS[antigravity]="./.agents/skills/$SKILL_NAME"
-LOCAL_PATHS[claude]="./.claude/skills/$SKILL_NAME"
-LOCAL_PATHS[codex]="./.agents/skills/$SKILL_NAME"
-LOCAL_PATHS[gemini]="./.gemini/skills/$SKILL_NAME"
-LOCAL_PATHS[opencode]="./.opencode/skills/$SKILL_NAME"
+get_local_path() {
+    case "$1" in
+        antigravity) echo "./.agents/skills/$SKILL_NAME" ;;
+        claude) echo "./.claude/skills/$SKILL_NAME" ;;
+        codex) echo "./.agents/skills/$SKILL_NAME" ;;
+        gemini) echo "./.gemini/skills/$SKILL_NAME" ;;
+        opencode) echo "./.opencode/skills/$SKILL_NAME" ;;
+    esac
+}
 
 install_to() {
     local tool=$1
@@ -56,20 +62,24 @@ install_to() {
     fi
 }
 
+ALL_TOOLS=("antigravity" "claude" "codex" "gemini" "opencode")
+
 if [ "$TARGET_TOOL" = "all" ]; then
-    for tool in "${!GLOBAL_PATHS[@]}"; do
+    for tool in "${ALL_TOOLS[@]}"; do
         if [ "$INSTALL_TYPE" = "global" ]; then
-            install_to "$tool" "${GLOBAL_PATHS[$tool]}"
+            dest=$(get_global_path "$tool")
         else
-            install_to "$tool" "${LOCAL_PATHS[$tool]}"
+            dest=$(get_local_path "$tool")
         fi
+        install_to "$tool" "$dest"
     done
 else
     if [ "$INSTALL_TYPE" = "global" ]; then
-        install_to "$TARGET_TOOL" "${GLOBAL_PATHS[$TARGET_TOOL]}"
+        dest=$(get_global_path "$TARGET_TOOL")
     else
-        install_to "$TARGET_TOOL" "${LOCAL_PATHS[$TARGET_TOOL]}"
+        dest=$(get_local_path "$TARGET_TOOL")
     fi
+    install_to "$TARGET_TOOL" "$dest"
 fi
 
 echo "Installation complete!"
