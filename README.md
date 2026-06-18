@@ -50,7 +50,7 @@ universal-agent-skill-builder/
    - *Compatibility Note*: The `install.sh` uses switch-case functions instead of associative arrays (`declare -A`) to maintain native compatibility with macOS default Bash 3.2.57.
 4. **Phase 3 & 4**: Generates base documentation and translates it into Korean, Japanese, Spanish, and Chinese with cross-linking.
 5. **Phase 5**: Runs Git initialization, associates the remote, and pushes the local workspace.
-6. **Phase 6**: Compiles factual HN and Geek News promotional copy.
+6. **Phase 6**: Compiles factual short/long promotional copy in 5 languages.
 
 ## 📥 Installation
 
