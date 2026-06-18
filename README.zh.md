@@ -39,7 +39,7 @@ universal-agent-skill-builder/
 ├── README.ja.md      # 🇯🇵 日文文档
 ├── README.es.md      # 🇪🇸 西班牙文文档
 ├── README.zh.md      # 🇨🇳 中文文档
-└── promote_hn_geek.md# 📢 Hacker News 与 Geek News 推广稿件草案
+└── promotion_kit.md # 📢 5 国语言 Short/Long 推广材料草案
 ```
 
 ### 🧩 工作原理

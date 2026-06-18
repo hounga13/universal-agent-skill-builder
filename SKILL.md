@@ -73,9 +73,10 @@ The agent will then follow the 6-stage process described below.
 - Run `git push -u origin main` (or instruct the user to run it if permission issues arise).
 
 ### Phase 6: Write Promotional Posts
-- Generate two distinct promotional posts for:
-  1. **The Hacker News (HN)**: Show HN style, informative, technical, focusing on the utility.
-  2. **Geek News**: Clean, structured, highlights the core problem solved.
+- Generate promotional materials in all 5 supported languages (English, Korean, Japanese, Spanish, Chinese).
+- For each language, produce two types of posts:
+  1. **Short Message (SNS)**: Concise summary optimized for microblogging (e.g., X/Twitter) with repository link.
+  2. **Long Text (Bulletin Board)**: Structured summary optimized for developer forums or tech blogs.
 - **Tone Rule**: Strictly factual, calm, objective, with zero buzzwords or hype.
 
 ---
@@ -83,4 +84,4 @@ The agent will then follow the 6-stage process described below.
 ## Common Mistakes
 1. **Skipping Language Links**: Forgetting to add language selector headers to the top of translation READMEs.
 2. **Missing OS Installers**: Generating `install.sh` but neglecting Windows CLI users (`install.ps1`).
-3. **Hyperbolic Tone**: Writing marketing copy for HN/Geek News instead of a technical, objective description.
+3. **Hyperbolic Tone**: Writing marketing copy instead of a technical, objective description.

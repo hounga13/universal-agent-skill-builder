@@ -39,7 +39,7 @@ universal-agent-skill-builder/
 ├── README.ja.md      # 🇯🇵 일본어 문서
 ├── README.es.md      # 🇪🇸 스페인어 문서
 ├── README.zh.md      # 🇨🇳 중국어 문서
-└── promote_hn_geek.md# 📢 Hacker News 및 Geek News 홍보용 글 초안
+└── promotion_kit.md # 📢 5개 국어별 Short/Long 홍보 자료 초안
 ```
 
 ### 🧩 작동 원리

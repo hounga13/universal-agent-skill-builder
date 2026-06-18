@@ -39,7 +39,7 @@ universal-agent-skill-builder/
 ├── README.ja.md      # 🇯🇵 Documentación en japonés
 ├── README.es.md      # 🇪🇸 Documentación en español
 ├── README.zh.md      # 🇨🇳 Documentación en chino
-└── promote_hn_geek.md# 📢 Borradores de promoción para Hacker News y Geek News
+└── promotion_kit.md # 📢 Borradores de promoción en 5 idiomas (Short/Long)
 ```
 
 ### 🧩 Cómo Funciona
